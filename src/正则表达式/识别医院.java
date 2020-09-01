@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,13 +18,15 @@ import java.util.regex.Pattern;
  */
 public class 识别医院 {
     public static void main(String[] args) {
-        String urladd = "http://hospital.fh21.com.cn/hc-1-1.html";
+        String urladd = "https://www.haodf.com/";
         String reg = "[\u4e00-\u9fa5]+((医?院)|(中心))";
         String str = "";//医院网址
         String fileName = "f:\\中科韬睿\\JSP\\FILE\\";
         try {
             URL url = new URL(urladd);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(),"gb2312"));
+            URLConnection urlcon = url.openConnection();
+            urlcon.setRequestProperty("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(urlcon.getInputStream(),"gb2312"));
             String web = reader.readLine();
             while (web!=null){
                 str +=web+"\r\n";
