@@ -13,11 +13,9 @@ public class ATMAccess {
     public static void main(String[] args) {
         Money m = new Money();
         new Thread(new AtmMoney(m,-60)).start();
-        new Thread(new CounterMoney(m,-250)).start();
-        new Thread(new AtmMoney(m,60)).start();
+        new Thread(new CounterMoney(m,90)).start();
         new Thread(new AtmMoney(m,-60)).start();
-        new Thread(new CounterMoney(m,250)).start();
-        new Thread(new AtmMoney(m,60)).start();
+        new Thread(new CounterMoney(m,-90)).start();
     }
 
 }
@@ -42,7 +40,6 @@ class Money{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 }
 
@@ -77,5 +74,6 @@ class CounterMoney implements Runnable{
     public void run() {
         System.out.println("通过人工柜台"+(money<0?"取钱":"存钱")+money);
         M.moneyExe(this.money);
+
     }
 }
