@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../JAVA高级应用.iml" filepath="$PROJECT_DIR$/../JAVA高级应用.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-highClass.iml" filepath="$PROJECT_DIR$/java-highClass.iml" />
     </modules>
   </component>
 </project>
