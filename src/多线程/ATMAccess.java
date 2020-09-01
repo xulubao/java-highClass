@@ -8,8 +8,6 @@ package 多线程;
  * @date 2020/9/1 17:51
  */
 public class ATMAccess {
-
-
     public static void main(String[] args) {
         Money m = new Money();
         new Thread(new AtmMoney(m,-60)).start();
