@@ -58,7 +58,7 @@ class AtmMoney implements Runnable{
     }
     @Override
     public void run() {
-        System.out.println("通过ATM"+(money<0?"取钱":"存钱"));
+        System.out.println("通过ATM"+(money<0?"取钱":"存钱")+money);
         M.moneyExe(this.money);
     }
 }
@@ -75,7 +75,7 @@ class CounterMoney implements Runnable{
     }
     @Override
     public void run() {
-        System.out.println("通过人工柜台"+(money<0?"取钱":"存钱"));
+        System.out.println("通过人工柜台"+(money<0?"取钱":"存钱")+money);
         M.moneyExe(this.money);
     }
 }
