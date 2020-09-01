@@ -30,6 +30,7 @@ public class Timer extends JFrame {
         this.setSize(400,300);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+
     }
 
 
