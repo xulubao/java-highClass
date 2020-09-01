@@ -3,6 +3,7 @@ package 正则表达式;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,8 +17,7 @@ import java.util.regex.Pattern;
 public class 下载所有的图片网址 {
     public static void main(String[] args) throws IOException {
         System.out.print("请输入要网址：");
-        //String urls = "http://www.netbian.com/";
-        String urls = new Scanner(System.in).nextLine();
+        String urls = "http://www.netbian.com/";
         //(?<=<img\ssrc=")https?://(\w)+(\.\w+)+(\/\w+)+\.\w+
         String reg = "https?://(\\w)+(\\.\\w+)+(\\/\\w+)+.jpg";
         String filePate = "F:\\中科韬睿\\JSP\\FILE\\";
@@ -26,6 +26,8 @@ public class 下载所有的图片网址 {
         InputStream is = null;
         try {
             URL url = new URL(urls);
+            //URLConnection urlConnection = url.openConnection();
+            //urlConnection.setRequestProperty("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36");
             is = url.openStream();
             reader = new BufferedReader(new InputStreamReader(is,"gbk"));
             String str = reader.readLine();
