@@ -10,7 +10,6 @@ import java.io.*;
  */
 public class Demo {
     public static void main(String[] args) {
-
         try {
             FileInputStream fis = new FileInputStream("F:\\中科韬睿\\JSP\\FILE/1.txt");
             InputStreamReader isr = new InputStreamReader(fis);
