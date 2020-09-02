@@ -18,7 +18,7 @@ public class 抓取网站 {
      */
     public String findYq3(String url) throws IOException {
         //通过DIV的id判断是不是友情链接的块，截取下来
-        String regx = "(?<=<div id=\"yq_3\" style=\"display:none\">)<a href=\"\\w+://\\w\\w.+(?=</div>)";
+        String regx = "(?<=<div id=\"yq_3\" style=\"display:none\">)<a href=\"\\w+://\\w\\w.+(?=</div>.+<div id=\"yq_4)";
         URL urls = new URL(url);
         BufferedReader reader = new BufferedReader(new InputStreamReader(urls.openStream(),"utf-8"));
         StringBuffer buffer = new StringBuffer();
